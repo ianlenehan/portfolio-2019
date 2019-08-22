@@ -7,6 +7,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f6fa;
 }
 article,
 aside,
@@ -619,4 +620,16 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+/* Custom CSS I added */
+
+.left-side-inner {
+  width: 250px;
+  display: flex;
+}
+
+.right-side-inner {
+  flex-grow: 1;
+  display: flex;
 }
