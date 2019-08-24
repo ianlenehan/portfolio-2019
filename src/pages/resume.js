@@ -12,7 +12,8 @@ const ResumeContainer = styled.div`
   height: 950px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 10px;
+  overflow: hidden;
   ${props =>
     props.showShadow &&
     `
@@ -53,21 +54,27 @@ const Body = styled.div`
 const LeftSide = styled.div`
   background-color: #263547;
   flex-grow: 1;
-  padding: 50px 0 30px 35px;
+  padding: 50px 25px 30px 35px;
   color: white;
 `
 
 const RightSide = styled.div`
   background-color: white;
   flex-grow: 1;
-  padding: 50px 0 50px 35px;
+  padding: 50px 35px;
   color: #263547;
+
+  p.bodyText {
+    font-size: 11px;
+    line-height: initial;
+  }
 `
 
 const H3 = styled.h3`
   font-size: 14px;
   font-weight: 800;
   margin: 0 0 10px 0;
+  letter-spacing: 1px;
   ${props => props.green && `color: #27ae60;`}
   margin-top: ${props => (props.first ? 0 : `20px`)};
 `
@@ -89,8 +96,30 @@ const Item = styled.li`
   }
 `
 
+const JobTitle = styled.p`
+  font-size: 12px;
+  font-weight: 700;
+  margin: 20px 0 0 0;
+  line-height: 14px;
+`
+
 const ImageWrap = styled(SideList)`
-  margin-top: 30px;
+  margin-top: 15px;
+`
+
+const HR = styled.hr`
+  height: 3px;
+  background-color: #27ae60;
+  width: 100%;
+  margin-top: 45px;
+`
+
+const Job = styled.p`
+  color: #9199a1;
+  font-size: 11px;
+  line-height: initial;
+  font-weight: 500;
+  margin: 0 0 5px 0;
 `
 
 const devSkills = [
@@ -162,7 +191,7 @@ const Resume = props => {
   `)
 
   return (
-    <Layout hideHeader>
+    <Layout smallHeader dark>
       <SEO title="Resume" />
       <ResumeContainer showShadow={showShadow}>
         <Slide top>
@@ -228,6 +257,43 @@ const Resume = props => {
             <div className="right-side-inner">
               <RightSide>
                 <H3 first>PROFILE</H3>
+                <p className="bodyText">
+                  A former recruiter and operations manager in the outdoor
+                  advertising industry, I have found my calling with my third
+                  career as a web developer. A keen problem solver, I love the
+                  highs that this job brings when fixing a bug or cracking a
+                  complicated feature. I believe I can get on with almost
+                  anybody and my unique career path has given me a variety of
+                  skills and experiences that I can bring to my job as a dev.
+                </p>
+
+                <HR />
+
+                <H3>EXPERIENCE</H3>
+                <JobTitle>DEVELOPER</JobTitle>
+                <Job>Yarno | Feb 2019 - Aug 2019</Job>
+                <Item>
+                  React, GraphQL, Ruby on Rails, some exposure to Docker and AWS
+                </Item>
+
+                <JobTitle>FRONT END DEVELOPER</JobTitle>
+                <Job>Blake eLearning | Aug 2016 - Feb 2019</Job>
+                <Item>EmberJS, Ruby on Rails</Item>
+
+                <JobTitle>OPERATIONS & CONSULTING ROLES</JobTitle>
+                <Job>APN Outdoor / APN News & Media | 2009 - 2015</Job>
+
+                <JobTitle>RECRUITMENT CONSULTANT</JobTitle>
+                <Job>Hudson, Finite IT, Chandler Macleod | 2005 - 2009</Job>
+
+                <HR />
+
+                <H3>EDUCATION</H3>
+                <JobTitle>WEB DEVELOPMENT IMMERSIVE</JobTitle>
+                <Job>General Assembly | 2016</Job>
+
+                <JobTitle>BACHELOR OF ARTS (HISTORY & POLITICS)</JobTitle>
+                <Job>University College Dublin | 1999 - 2002</Job>
               </RightSide>
             </div>
           </Slide>

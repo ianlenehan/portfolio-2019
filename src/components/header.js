@@ -6,27 +6,27 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const HeaderContainer = styled.div`
-  background: #27ae60;
-  margin-bottom: 1.45rem;
+  background: ${props => (props.smallHeader ? `none` : `#27ae60`)};
+  margin-bottom: ${props => (props.smallHeader ? `5px` : `1.45rem`)};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.45rem 1.0875rem;
+  padding: ${props => (props.smallHeader ? `5px` : `1.45rem 1.0875rem`)};
 
   h1 {
     font-family: "Acme";
   }
 `
 
-const Header = ({ siteTitle }) => (
-  <HeaderContainer>
+const Header = ({ siteTitle, smallHeader, dark }) => (
+  <HeaderContainer smallHeader={smallHeader}>
     <Flip top>
       <div>
         <h1 style={{ margin: 0 }}>
           <Link
             to="/"
             style={{
-              color: `white`,
+              color: dark ? ` #263547` : `white`,
               textDecoration: `none`,
             }}
           >
@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => (
         </h1>
       </div>
     </Flip>
-    <Navigation />
+    <Navigation dark={dark} />
   </HeaderContainer>
 )
 

@@ -9,10 +9,9 @@ const Nav = styled.div`
   ${props =>
     props.home &&
     `
-position: absolute;
-top: 30px;
-
-`};
+    position: absolute;
+    top: 30px;
+  `};
   ul {
     list-style: none;
     margin: 0;
@@ -22,14 +21,14 @@ top: 30px;
     margin: 0 8px;
   }
   a {
-    color: #dfe6e9;
+    color: ${props => (props.dark ? `#263547` : `#dfe6e9`)};
     font-family: "Poppins";
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all ease-in-out 0.25s;
     :hover {
-      color: white;
-      border-color: white;
+      color: ${props => (props.dark ? `black` : `white`)};
+      border-color: ${props => (props.dark ? `black` : `white`)};
     }
   }
 `
@@ -41,7 +40,7 @@ const IconItem = styled.li`
 
 function Navigation(props) {
   return (
-    <Nav home={props.home}>
+    <Nav home={props.home} dark={props.dark}>
       <Flip top>
         <ul>
           <li>
