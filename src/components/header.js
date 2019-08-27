@@ -8,6 +8,7 @@ import React from "react"
 const HeaderContainer = styled.div`
   background: ${props => (props.smallHeader ? `none` : `#27ae60`)};
   margin-bottom: ${props => (props.smallHeader ? `5px` : `1.45rem`)};
+  transition: all ease-in-out 1s;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,6 +1,16 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from "styled-components"
 import Img from "gatsby-image"
+
+const ShowcaseMockup = styled(Img)`
+  picture > img {
+    height: auto !important;
+  }
+  > img {
+    height: auto !important;
+  }
+`
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -18,7 +28,7 @@ const Image = () => {
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(maxHeight: 450) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -26,7 +36,13 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <Img
+      fluid={data.placeholderImage.childImageSharp.fluid}
+      imgStyle={{ objectFit: "contain" }}
+      style={{ maxHeight: "100%" }}
+    />
+  )
 }
 
 export default Image

@@ -8,10 +8,21 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import styled from "styled-components"
 import Header from "./header"
 import { PageContainer } from "./sharedStyles"
 import "./layout.css"
+
+const Footer = styled.footer`
+  font-family: "Poppins";
+  margin-top: 20px;
+  font-size: 14px;
+`
+
+const Main = styled.main`
+  width: 100%;
+  min-height: 80vh;
+`
 
 const Layout = ({ children, smallHeader, dark }) => {
   const data = useStaticQuery(graphql`
@@ -32,12 +43,8 @@ const Layout = ({ children, smallHeader, dark }) => {
         dark={dark}
       />
       <PageContainer>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Main>{children}</Main>
+        <Footer>© {new Date().getFullYear()} | Ian Lenehan</Footer>
       </PageContainer>
     </>
   )

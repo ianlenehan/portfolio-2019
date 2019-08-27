@@ -22,13 +22,14 @@ const Nav = styled.div`
   }
   a {
     color: ${props => (props.dark ? `#263547` : `#dfe6e9`)};
+    transition: color 1s;
     font-family: "Poppins";
     text-decoration: none;
     border-bottom: 1px solid transparent;
     transition: all ease-in-out 0.25s;
     :hover {
-      color: ${props => (props.dark ? `black` : `white`)};
-      border-color: ${props => (props.dark ? `black` : `white`)};
+      color: ${props => (props.dark ? `#263547` : `white`)};
+      border-color: ${props => (props.dark ? `#263547` : `white`)};
     }
   }
 `
@@ -39,21 +40,30 @@ const IconItem = styled.li`
 `
 
 function Navigation(props) {
+  const activeClassName = props.dark ? "active-nav-dark" : "active-nav"
   return (
     <Nav home={props.home} dark={props.dark}>
       <Flip top>
         <ul>
           <li>
-            <Link to="/resume">Resume</Link>
+            <Link to="/resume" activeClassName={activeClassName}>
+              Resume
+            </Link>
           </li>
           <li>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/code" activeClassName={activeClassName}>
+              Code
+            </Link>
           </li>
           <li>
-            <Link to="/photography">Photography</Link>
+            <Link to="/photography" activeClassName={activeClassName}>
+              Photography
+            </Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact" activeClassName={activeClassName}>
+              Contact
+            </Link>
           </li>
           <IconItem>
             <a href="https://au.linkedin.com/in/ilenehan">

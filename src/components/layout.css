@@ -633,3 +633,13 @@ pre tt:after {
   flex-grow: 1;
   display: flex;
 }
+
+li a.active-nav {
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+li a.active-nav-dark {
+  border-bottom: 1px solid #263547;
+  color: #263547;
+}

@@ -12,7 +12,7 @@ const ResumeContainer = styled.div`
   height: 950px;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin: 20px auto;
   overflow: hidden;
   ${props =>
     props.showShadow &&
@@ -145,7 +145,7 @@ const sideProjects = [
     tools: "React Native, Redux, GraphQL, Ruby on Rails",
   },
   {
-    name: "GOLF CLASSIC",
+    name: "PAR TOWN",
     description: "Friendly golf competition app",
     tools: "React Native, Ruby on Rails",
   },
@@ -164,10 +164,12 @@ const contacts = ["0410 872 627", "ian@ianlenehan.com", "ianlenehan.com"]
 
 const Resume = props => {
   const [showShadow, setShowShadow] = useState(false)
+  const [navCollapsed, setNavCollapsed] = useState(false)
 
   useEffect(() => {
     setTimeout(() => {
       setShowShadow(true)
+      setNavCollapsed(true)
     }, 1300)
   }, [])
 
@@ -191,7 +193,7 @@ const Resume = props => {
   `)
 
   return (
-    <Layout smallHeader dark>
+    <Layout smallHeader={navCollapsed} dark={navCollapsed}>
       <SEO title="Resume" />
       <ResumeContainer showShadow={showShadow}>
         <Slide top>
@@ -304,19 +306,3 @@ const Resume = props => {
 }
 
 export default Resume
-
-// const GithubImage = () => {
-//   const data = useStaticQuery(graphql`
-//     query {
-//       file(relativePath: { eq: "github.png" }) {
-//         childImageSharp {
-//           fixed(width: 50, height: 50) {
-//             ...GatsbyImageSharpFixed
-//           }
-//         }
-//       }
-//     }
-//   `)
-
-//   return <Img fixed={data.file.childImageSharp.fixed} />
-// }
