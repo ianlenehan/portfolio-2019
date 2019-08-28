@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { HomePageContainer } from "../components/sharedStyles"
 import BackgroundImage from "gatsby-background-image"
@@ -12,6 +12,7 @@ const SiteName = styled.h1`
   font-size: 100px;
   color: white;
   margin-bottom: 0;
+  cursor: pointer;
 `
 
 const SubHeader = styled.h3`
@@ -20,16 +21,16 @@ const SubHeader = styled.h3`
   font-weight: 300;
 `
 
-const imageChoices = ["One", "Two", "Three"]
-
 const IndexPage = props => {
+  const [image, setImage] = useState("image1")
   const getImage = () => {
-    const index = Math.floor(Math.random() * 3 + 1) - 1
-    const imagePrefix = imageChoices[index]
-    return `image${imagePrefix}`
+    const index = Math.floor(Math.random() * 10 + 1)
+    console.log("getting image", index)
+
+    setImage(`image${index}`)
   }
 
-  const image = getImage()
+  useEffect(() => getImage(), [])
 
   return (
     <BackgroundImage
@@ -40,7 +41,7 @@ const IndexPage = props => {
         <SEO title="Home" />
         <Navigation home />
         <Bounce left>
-          <SiteName>IAN LENEHAN</SiteName>
+          <SiteName onClick={getImage}>IAN LENEHAN</SiteName>
         </Bounce>
         <Bounce right>
           <SubHeader>{"Web Developer & Photographer"}</SubHeader>
@@ -64,13 +65,34 @@ export const fluidImage = graphql`
 
 export const pageQuery = graphql`
   query {
-    imageOne: file(relativePath: { eq: "dublin_bridge.jpg" }) {
+    image1: file(relativePath: { eq: "homepage/dublin_bridge.jpg" }) {
       ...fluidImage
     }
-    imageTwo: file(relativePath: { eq: "forest.jpg" }) {
+    image2: file(relativePath: { eq: "homepage/forest.jpg" }) {
       ...fluidImage
     }
-    imageThree: file(relativePath: { eq: "giants.jpg" }) {
+    image3: file(relativePath: { eq: "homepage/giants.jpg" }) {
+      ...fluidImage
+    }
+    image4: file(relativePath: { eq: "homepage/house_moon.jpg" }) {
+      ...fluidImage
+    }
+    image5: file(relativePath: { eq: "homepage/lahinch_sunset.jpg" }) {
+      ...fluidImage
+    }
+    image6: file(relativePath: { eq: "homepage/light.jpg" }) {
+      ...fluidImage
+    }
+    image7: file(relativePath: { eq: "homepage/quilt.jpg" }) {
+      ...fluidImage
+    }
+    image8: file(relativePath: { eq: "homepage/red_morning.jpg" }) {
+      ...fluidImage
+    }
+    image9: file(relativePath: { eq: "homepage/vivid.jpg" }) {
+      ...fluidImage
+    }
+    image10: file(relativePath: { eq: "homepage/yangshuo.jpg" }) {
       ...fluidImage
     }
   }

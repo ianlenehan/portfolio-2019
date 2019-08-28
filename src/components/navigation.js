@@ -1,9 +1,23 @@
-import React from "react"
+import React, { useState } from "react"
+import Modal from "react-modal"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import Flip from "react-reveal/Flip"
 import { FaLinkedin } from "react-icons/fa"
 import "typeface-poppins"
+
+Modal.setAppElement("body")
+
+const modalStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+}
 
 const Nav = styled.div`
   ${props =>
@@ -39,7 +53,22 @@ const IconItem = styled.li`
   color: #dfe6e9;
 `
 
+const Title = styled.h2`
+  font-family: "Acme";
+  margin: 25px;
+  color: #263547;
+`
+
+const Text = styled.p`
+  margin: 25px;
+  font-family: "Poppins";
+  font-size: 16px;
+  line-height: initial;
+  color: #263547;
+`
+
 function Navigation(props) {
+  const [modalOpen, setModalOpen] = useState(false)
   const activeClassName = props.dark ? "active-nav-dark" : "active-nav"
   return (
     <Nav home={props.home} dark={props.dark}>
@@ -61,9 +90,9 @@ function Navigation(props) {
             </Link>
           </li>
           <li>
-            <Link to="/contact" activeClassName={activeClassName}>
+            <a href="#" onClick={() => setModalOpen(true)}>
               Contact
-            </Link>
+            </a>
           </li>
           <IconItem>
             <a href="https://au.linkedin.com/in/ilenehan">
@@ -72,6 +101,14 @@ function Navigation(props) {
           </IconItem>
         </ul>
       </Flip>
+      <Modal
+        isOpen={modalOpen}
+        onRequestClose={() => setModalOpen(false)}
+        style={modalStyles}
+      >
+        <Title>Get In Touch</Title>
+        <Text>ian@ianlenehan.com</Text>
+      </Modal>
     </Nav>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Img from "gatsby-image"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
@@ -27,7 +27,6 @@ const Buttons = styled.div`
 `
 
 function SlideShow({ category }) {
-  const [index, setIndex] = useState(0)
   const imageData = useStaticQuery(
     graphql`
       query {
@@ -114,15 +113,23 @@ function SlideShow({ category }) {
       }
     `
   )
-  //Minus 1 for array offset from 0
+  const [index, setIndex] = useState(0)
+  useEffect(() => {
+    setIndex(0)
+  }, [category])
+
   const imageSet = imageData[category]
   const length = imageSet.edges.length - 1
 
-  const handleNext = () =>
-    index === length ? setIndex(0) : setIndex(index + 1)
+  const handleNext = () => {
+    const nextIndex = index === length ? 0 : index + 1
+    return setIndex(nextIndex)
+  }
 
-  const handlePrevious = () =>
-    index === 0 ? setIndex(length) : setIndex(index - 1)
+  const handlePrevious = () => {
+    const nextIndex = index === length ? 0 : index - 1
+    return setIndex(nextIndex)
+  }
 
   const { node } = imageSet.edges[index]
   return (

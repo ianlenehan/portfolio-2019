@@ -21,6 +21,7 @@
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-icons": "^3.7.0",
+    "react-modal": "^3.10.1",
     "react-reveal": "^1.2.2",
     "styled-components": "^4.3.2",
     "typeface-acme": "^0.0.72",

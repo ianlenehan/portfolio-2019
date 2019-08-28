@@ -22,6 +22,7 @@ const Footer = styled.footer`
 const Main = styled.main`
   width: 100%;
   min-height: 80vh;
+  max-width: 1200px;
 `
 
 const Layout = ({ children, smallHeader, dark }) => {

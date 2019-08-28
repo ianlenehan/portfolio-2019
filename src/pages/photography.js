@@ -43,6 +43,7 @@ const Photography = () => {
       <CategoryList>
         {categories.map(c => (
           <Item
+            key={c}
             onClick={() => setSelectedCategory(c)}
             isActive={selectedCategory === c}
           >
