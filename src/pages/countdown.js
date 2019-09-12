@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
+import "typeface-poppins"
+import "typeface-acme"
 
 const Container = styled.div`
   display: flex;
