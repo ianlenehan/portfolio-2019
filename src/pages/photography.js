@@ -1,17 +1,10 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import SlideShow from "../components/slideShow"
+import Photos from "../components/photos"
 import Layout from "../components/layout"
-
-const ImageContainer = styled.div`
-  height: 70vh;
-  margin: 0 auto;
-  max-width: 80%;
-`
 
 const CategoryList = styled.ul`
   list-style: none;
-  margin: 0;
   display: flex;
   justify-content: center;
 `
@@ -32,6 +25,11 @@ const Item = styled.li`
     border-color: #27ae60;
     cursor: pointer;
   }
+
+  @media only screen and (max-device-width: 700px) {
+    margin: 0 4px;
+    font-size: smaller;
+  }
 `
 
 const categories = ["cities", "landscape", "wildlife", "crossfit", "weddings"]
@@ -51,9 +49,7 @@ const Photography = () => {
           </Item>
         ))}
       </CategoryList>
-      <ImageContainer>
-        <SlideShow category={selectedCategory} />
-      </ImageContainer>
+      <Photos category={selectedCategory} />
     </Layout>
   )
 }

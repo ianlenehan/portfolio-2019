@@ -1,11 +1,31 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
-import { HomePageContainer } from "../components/sharedStyles"
 import BackgroundImage from "gatsby-background-image"
 import Bounce from "react-reveal/Bounce"
 import SEO from "../components/seo"
 import Navigation from "../components/navigation"
 import "typeface-poppins"
+
+const HomePageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+
+  @media only screen and (max-device-width: 700px) {
+    align-items: flex-end;
+  }
+`
+
+const Details = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 const SiteName = styled.h1`
   font-family: "Acme";
@@ -13,12 +33,20 @@ const SiteName = styled.h1`
   color: white;
   margin-bottom: 0;
   cursor: pointer;
+
+  @media only screen and (max-device-width: 700px) {
+    font-size: 36px;
+  }
 `
 
 const SubHeader = styled.h3`
   color: white;
   font-family: "Poppins";
   font-weight: 300;
+
+  @media only screen and (max-device-width: 700px) {
+    font-size: 18px;
+  }
 `
 
 const IndexPage = props => {
@@ -40,12 +68,14 @@ const IndexPage = props => {
       <HomePageContainer>
         <SEO title="Home" />
         <Navigation home />
-        <Bounce left>
-          <SiteName onClick={getImage}>IAN LENEHAN</SiteName>
-        </Bounce>
-        <Bounce right>
-          <SubHeader>{"Web Developer & Photographer"}</SubHeader>
-        </Bounce>
+        <Details>
+          <Bounce left>
+            <SiteName onClick={getImage}>IAN LENEHAN</SiteName>
+          </Bounce>
+          <Bounce right>
+            <SubHeader>{"Web Developer & Photographer"}</SubHeader>
+          </Bounce>
+        </Details>
       </HomePageContainer>
     </BackgroundImage>
   )

@@ -643,3 +643,8 @@ li a.active-nav-dark {
   border-bottom: 1px solid #263547;
   color: #263547;
 }
+@media only screen and (max-device-width: 700px) {
+  li a.active-nav-dark {
+    border-bottom: none;
+  }
+}
