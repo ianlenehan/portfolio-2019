@@ -4,7 +4,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import "typeface-poppins"
 import "typeface-acme"
-import "./layout.css"
+import "../components/layout.css"
 
 const Container = styled.div`
   display: flex;
