@@ -53,7 +53,6 @@ const IndexPage = props => {
   const [image, setImage] = useState("image1")
   const getImage = () => {
     const index = Math.floor(Math.random() * 10 + 1)
-    console.log("getting image", index)
 
     setImage(`image${index}`)
   }
@@ -107,13 +106,13 @@ export const pageQuery = graphql`
     image4: file(relativePath: { eq: "homepage/house_moon.jpg" }) {
       ...fluidImage
     }
-    image5: file(relativePath: { eq: "homepage/lahinch_sunset.jpg" }) {
+    image5: file(relativePath: { eq: "homepage/lahinch_sunset.jpeg" }) {
       ...fluidImage
     }
     image6: file(relativePath: { eq: "homepage/light.jpg" }) {
       ...fluidImage
     }
-    image7: file(relativePath: { eq: "homepage/quilt.jpg" }) {
+    image7: file(relativePath: { eq: "homepage/quilt.jpeg" }) {
       ...fluidImage
     }
     image8: file(relativePath: { eq: "homepage/red_morning.jpg" }) {
