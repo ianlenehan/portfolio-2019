@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import BackgroundImage from "gatsby-background-image"
 import "typeface-poppins"
 import "typeface-acme"
 import "../components/layout.css"
@@ -12,7 +11,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #95afc0;
   padding: 10px;
   color: white;
   font-family: "Poppins";
@@ -72,7 +71,7 @@ export default function countdown(props) {
   const [mins, setMins] = useState()
   const [seconds, setSeconds] = useState()
 
-  const countDownDate = new Date("Sep 24, 2019 05:55:00")
+  const countDownDate = new Date("Nov 23, 2019 14:10:00")
   const timer = setInterval(() => {
     const now = new Date().getTime()
     const distance = countDownDate.getTime() - now
@@ -95,35 +94,30 @@ export default function countdown(props) {
   }, 1000)
 
   return (
-    <BackgroundImage
-      fluid={props.data.file.childImageSharp.fluid}
-      backgroundColor={`#040e18`}
-    >
-      <Container>
-        <CountdownBox>
-          <h1>Sharon gets to Sydney in...</h1>
-          <Clock>
-            <span>
-              {days}
-              <label>Days</label>
-            </span>
-            <span>
-              {hours}
-              <label>Hours</label>
-            </span>
-            <span>
-              {mins}
-              <label>Mins</label>
-            </span>
-            <span>
-              {seconds}
-              <label>Seconds</label>
-            </span>
-          </Clock>
-          <ArrivalDate>{countDownDate.toDateString()}</ArrivalDate>
-        </CountdownBox>
-      </Container>
-    </BackgroundImage>
+    <Container>
+      <CountdownBox>
+        <h1>Sharon gets to Sydney in...</h1>
+        <Clock>
+          <span>
+            {days}
+            <label>Days</label>
+          </span>
+          <span>
+            {hours}
+            <label>Hours</label>
+          </span>
+          <span>
+            {mins}
+            <label>Mins</label>
+          </span>
+          <span>
+            {seconds}
+            <label>Seconds</label>
+          </span>
+        </Clock>
+        <ArrivalDate>{countDownDate.toDateString()}</ArrivalDate>
+      </CountdownBox>
+    </Container>
   )
 }
 
