@@ -96,7 +96,7 @@ export default function countdown(props) {
   return (
     <Container>
       <CountdownBox>
-        <h1>Sharon gets to Sydney in...</h1>
+        <h1>Ian gets to Beijing in...</h1>
         <Clock>
           <span>
             {days}
