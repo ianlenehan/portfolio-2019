@@ -71,7 +71,7 @@ export default function countdown(props) {
   const [mins, setMins] = useState()
   const [seconds, setSeconds] = useState()
 
-  const countDownDate = new Date("Dec 18, 2019 10:35:00")
+  const countDownDate = new Date("Oct 27, 2020 15:20:00")
   const timer = setInterval(() => {
     const now = new Date().getTime()
     const distance = countDownDate.getTime() - now
@@ -96,7 +96,7 @@ export default function countdown(props) {
   return (
     <Container>
       <CountdownBox>
-        <h1>Ian gets to Beijing in...</h1>
+        <h1>See you in London...</h1>
         <Clock>
           <span>
             {days}
