@@ -54,7 +54,7 @@ const Body = styled.div`
 const LeftSide = styled.div`
   background-color: #263547;
   flex-grow: 1;
-  padding: 50px 25px 30px 35px;
+  padding: 25px;
   color: white;
 `
 
@@ -128,9 +128,12 @@ const devSkills = [
   "React Native",
   "EmberJS",
   "Typescript",
-  "GraphQL",
+  "Apollo GraphQL",
+  "Gatsby JS",
   "Ruby on Rails",
   "Firebase",
+  "Cypress",
+  "Puppeteer",
 ]
 
 const sideProjects = [
@@ -160,7 +163,7 @@ const interests = [
   "CrossFit",
 ]
 
-const contacts = ["0410 872 627", "ian@ianlenehan.com", "ianlenehan.com"]
+const contacts = ["+44795 805 2628", "ian@ianlenehan.com", "ianlenehan.com"]
 
 const Resume = props => {
   const [showShadow, setShowShadow] = useState(false)
@@ -199,7 +202,7 @@ const Resume = props => {
         <Slide top>
           <Header>
             <h1>IAN LENEHAN</h1>
-            <span>WEB DEVELOPER</span>
+            <span>FRONTEND DEVELOPER</span>
           </Header>
         </Slide>
         <Body>
@@ -264,21 +267,26 @@ const Resume = props => {
                   advertising industry, I have found my calling with my third
                   career as a web developer. A keen problem solver, I love the
                   highs that this job brings when fixing a bug or cracking a
-                  complicated feature. I believe I can get on with almost
-                  anybody and my unique career path has given me a variety of
-                  skills and experiences that I can bring to my job as a dev.
+                  complicated feature, and always have a side project going in
+                  my spare time. I believe I can get on with almost anybody and
+                  my unique career path has given me a variety of skills and
+                  experiences that I can bring to my job as a dev.
                 </p>
 
                 <HR />
 
                 <H3>EXPERIENCE</H3>
+                <JobTitle>FRONTEND DEVELOPER</JobTitle>
+                <Job>Practice Ignition | Oct 2019 - Present</Job>
+                <Item>React, Apollo GraphQL, Puppeteer, Cypress</Item>
+
                 <JobTitle>DEVELOPER</JobTitle>
                 <Job>Yarno | Feb 2019 - Aug 2019</Job>
                 <Item>
                   React, GraphQL, Ruby on Rails, some exposure to Docker and AWS
                 </Item>
 
-                <JobTitle>FRONT END DEVELOPER</JobTitle>
+                <JobTitle>FRONTEND DEVELOPER</JobTitle>
                 <Job>Blake eLearning | Aug 2016 - Feb 2019</Job>
                 <Item>EmberJS, Ruby on Rails</Item>
 

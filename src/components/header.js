@@ -14,6 +14,14 @@ const HeaderContainer = styled.div`
   align-items: center;
   padding: ${props => (props.smallHeader ? `5px` : `1.45rem 1.0875rem`)};
 
+  a {
+    color: ${props => props.smallHeader && "grey"};
+  }
+
+  a:hover {
+    color: ${props => props.smallHeader && "black"};
+  }
+
   h1 {
     font-family: "Acme";
   }

@@ -14,9 +14,9 @@ const projects = [
   {
     title: "Neptune",
     description:
-      "Neptune is a custom CRM commissioned for use and redistribution by Leisure Pools. It contains complete customer management an manages the entire sales process, from generating a quote to creating the contract. Neptune includes SMS and email capabilites, as well as document storage and other requested features.",
-    tech: ["React", "Redux", "Firebase", "Google Cloud Functions"],
-    link: null,
+      "Neptune is a custom CRM commissioned for use and redistribution by Leisure Pools. It contains complete customer management anD manages the entire sales process, from generating a quote to creating the contract. Neptune includes SMS and email capabilites, as well as document storage and more.",
+    tech: ["React", "Recoil", "Firebase", "Google Cloud"],
+    link: "https://neptunecrm.com",
     image: "neptune",
   },
   {
@@ -26,14 +26,6 @@ const projects = [
     tech: ["React Native", "Redux", "Ruby on Rails"],
     link: "https://apps.apple.com/au/app/cure8/id1277695453",
     image: "cure8",
-  },
-  {
-    title: "Yarno Marketing",
-    description:
-      "The marketing site is one of the more recent projects I worked on at Yarno and is of course the only one that is viewable publicy! This was built in Gatsby from designs in Sketch.",
-    tech: ["React", "Gatsby", "Ghost"],
-    link: "https://yarno.com.au/",
-    image: "yarno",
   },
   {
     title: "Par Town",
@@ -46,7 +38,7 @@ const projects = [
 ]
 
 const blurb =
-  "A former recruiter and operations manager in the outdoor advertising industry, I have found my calling with my third career as a web developer. A keen problem solver, I love the highs that this job brings when fixing a bug or cracking a complicated feature. I believe I can get on with almost anybody and my unique career path has given me a variety of skills and experiences that I can bring to my job as a dev."
+  "A former recruiter and operations manager in the outdoor advertising industry, I have found my calling with my third career as a web developer. A keen problem solver, I love the highs that this job brings when fixing a bug or cracking a complicated feature, and always have a side project going in my spare time. I believe I can get on with almost anybody and my unique career path has given me a variety of skills and experiences that I can bring to my job as a dev."
 
 const techSkills = [
   "HTML",
@@ -56,12 +48,13 @@ const techSkills = [
   "React",
   "React Native",
   "Redux",
-  "GraphQL",
+  "Apollo GraphQL",
   "EmberJS",
   "Ruby on Rails",
   "Firebase",
-  "Sass",
   "Styled Components",
+  "Cypress",
+  "Puppeteer",
 ]
 
 function Portfolio() {
