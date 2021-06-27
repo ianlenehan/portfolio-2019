@@ -134,6 +134,7 @@ const devSkills = [
   "Firebase",
   "Cypress",
   "Puppeteer",
+  "Webpack",
 ]
 
 const sideProjects = [
@@ -278,7 +279,7 @@ const Resume = props => {
                 <H3>EXPERIENCE</H3>
                 <JobTitle>FRONTEND DEVELOPER</JobTitle>
                 <Job>Practice Ignition | Oct 2019 - Present</Job>
-                <Item>React, Apollo GraphQL, Puppeteer, Cypress</Item>
+                <Item>React, Apollo GraphQL, Puppeteer, Cypress, Webpack</Item>
 
                 <JobTitle>DEVELOPER</JobTitle>
                 <Job>Yarno | Feb 2019 - Aug 2019</Job>

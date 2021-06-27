@@ -55,6 +55,7 @@ const techSkills = [
   "Styled Components",
   "Cypress",
   "Puppeteer",
+  "Webpack",
 ]
 
 function Portfolio() {
