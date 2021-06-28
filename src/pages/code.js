@@ -44,7 +44,7 @@ const techSkills = [
   "HTML",
   "CSS",
   "Javascript",
-  "Typescript",
+  "TypeScript",
   "React",
   "React Native",
   "Redux",

@@ -127,7 +127,7 @@ const devSkills = [
   "Redux",
   "React Native",
   "EmberJS",
-  "Typescript",
+  "TypeScript",
   "Apollo GraphQL",
   "Gatsby JS",
   "Ruby on Rails",
@@ -284,7 +284,7 @@ const Resume = props => {
                 <JobTitle>DEVELOPER</JobTitle>
                 <Job>Yarno | Feb 2019 - Aug 2019</Job>
                 <Item>
-                  React, GraphQL, Ruby on Rails, some exposure to Docker and AWS
+                  React, GraphQL, TypeScript, Ruby on Rails, Docker, AWS
                 </Item>
 
                 <JobTitle>FRONTEND DEVELOPER</JobTitle>
