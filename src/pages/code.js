@@ -12,10 +12,10 @@ const Container = styled.div`
 
 const projects = [
   {
-    title: "Neptune",
+    title: "NeptuneCRM",
     description:
-      "Neptune is a custom CRM commissioned for use and redistribution by Leisure Pools. It contains complete customer management anD manages the entire sales process, from generating a quote to creating the contract. Neptune includes SMS and email capabilites, as well as document storage and more.",
-    tech: ["React", "Recoil", "Firebase", "Google Cloud"],
+      "NeptuneCRM is a custom CRM commissioned for use and redistribution by Leisure Pools. It contains complete customer management anD manages the entire sales process, from generating a quote to creating the contract. Neptune includes SMS and email capabilites, as well as document storage and more.",
+    tech: ["React", "Firebase", "Google Cloud"],
     link: "https://neptunecrm.com",
     image: "neptune",
   },
